@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements Fragment1.OnDataF
 
     // ViewBinding
     // https://developer.android.com/topic/libraries/view-binding
-    private ActivityMainBinding binding;
+    protected ActivityMainBinding binding;
     public static final String KEY = "key";
 
     @Override

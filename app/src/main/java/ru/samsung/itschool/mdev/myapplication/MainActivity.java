@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     // ViewBinding
     // https://developer.android.com/topic/libraries/view-binding
     private ActivityMainBinding binding;
+    public static final String KEY = "key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadFragment(Fragment f) {
         FragmentManager fm = getSupportFragmentManager();
+
+        Bundle arg = new Bundle();
+        arg.putString(KEY,"Hello from activity!");
+        f.setArguments(arg);
 
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.frBody,f);

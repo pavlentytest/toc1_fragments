@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import ru.samsung.itschool.mdev.myapplication.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Fragment1.OnDataFragment1Listener {
 
 
     // ViewBinding
@@ -51,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
         ft.addToBackStack(null); // кладем fragmentы в стек (для хистори)
         ft.commit();
 
+    }
+
+    @Override
+    public void onDataFragment1Listener(String str) {
+        Snackbar.make(findViewById(R.id.root),str,Snackbar.LENGTH_LONG).show();
     }
 }
